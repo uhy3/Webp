@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create selecter</title>
+</head>
+<style>
+    h3, li { /* 태그 이름 셀렉터 */
+        color : brown;
+    }
+    div > div > strong { /* 자식 셀렉터 */
+        background : yellow;
+    }
+    ul strong { /* 자손 셀렉터 */
+        color : dodgerblue;
+    }
+    .warning { /* class 셀렉터 */
+        color : red;
+    }
+    body.main { /* class 셀렉터 */
+        background : aliceblue;
+    }
+    #list { /* id 셀렉터 */
+        background : mistyrose;
+    }
+    #list span{ /* 자손 셀렉터 */
+        color : forestgreen;
+    }
+    h3:first-letter { /* 가상 클래스 셀렉터 */
+        color : red;
+    }
+    li:hover { /* 가상 클래스 셀렉터 */
+        background : yellowgreen;
+    }
+</style>
+<body class="main">
+    <div>
+    <h1>h1</h1>
+    <div> <strong>div > div > strong</strong></div>
+    <h3>h3</h3>
+    <h3>:First letter</h3>
+    <ul id="list">
+        <li>#id list-li</li>
+        <span>#id list-span</span><br>
+        <strong>ul strong</strong>
+    </ul>
+    <li>li</li>
+    body-class.main
+    </div>
+</body>
+</html>
