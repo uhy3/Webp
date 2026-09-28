@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover 활용</title>
+</head>
+
+
+<!-- JavaScript -->
+<script>
+  function changeImage(newSrc) {
+    document.getElementById('myImage').src = newSrc;
+  }
+</script>
+
+<body>
+    <h1>:hover</h1>
+    <hr>
+    <img id="myImage" src="file/back.webp" alt="이미지" 
+     onmouseover="changeImage('file/front.jfif')" 
+     onmouseout="changeImage('file/back.webp')">
+</body>
+</html>

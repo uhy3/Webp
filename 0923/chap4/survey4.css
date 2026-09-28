@@ -1,0 +1,44 @@
+    body {
+        background-color: aliceblue;
+    }
+
+    h1 {
+        color: brown;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    header {
+        border-bottom: 1px solid black;
+    }
+
+    ul {
+        border: 1px dotted black;
+    }
+
+    p {
+        font-family: '휴먼편지체', 'Human Pyunji';
+        font-size: 1em;
+        text-indent: 1em;
+    }
+
+    h2 {
+        color: blue;
+        text-shadow: 2px 2px 4px;
+    }
+
+    footer {
+        background-color: orange;
+        border-radius: 10px; 
+    }
+
+    section {
+        background-color: pink;
+    }
+
+    b {
+        color: blue;
+    }
