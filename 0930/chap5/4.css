@@ -1,0 +1,61 @@
+    html, body {
+        background-color: aliceblue;
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+    }
+
+    h1 {
+        color: brown;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    header {
+        border-bottom: 1px solid black;
+        height: 20%;
+        background-color: YELLOW;
+    }
+
+    ul {
+        border: 1px dotted black;
+    }
+
+    p {
+        font-family: '휴먼편지체', 'Human Pyunji';
+        font-size: 1em;
+        text-indent: 1em;
+    }
+
+    h2 {
+        color: blue;
+        text-shadow: 2px 2px 4px;
+    }
+
+    footer {
+        background-color: purple;
+        border-radius: 10px; 
+        height: 8%;
+        float: bottom;
+        vertical-align: bottom;
+    }
+    
+    nav { 
+        background-color: ORANGE;
+        border-radius: 10px; 
+        height: 72%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    section {
+        background-color: lightblue;
+        border-radius: 10px;
+        height: 72%;
+        display: inline-block;
+        vertical-align: top;
+    }
+

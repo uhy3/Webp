@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+</head>
+<style>
+    img.first {
+        animation: spin 1s linear infinite;
+    }
+    img.second {
+        animation: spin2 1s linear infinite;
+    }
+    @keyframes spin {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+    @keyframes spin2 {
+        0% {transform: rotate(-90deg);}
+        50% {transform: rotate(90deg);}
+        100% {transform: rotate(-90deg);}
+    }
+</style>
+<body>
+    <h1>어지러워요</h1>
+    <hr>
+    <img class="first" src="file/spongebob.webp" width="200px">
+    <img class="second" src="file/spongebob.webp" width="200px">
+</body>
+</html>
