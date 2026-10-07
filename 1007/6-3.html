@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function changeImage() {
+        this.src = "apple.png";
+    }
+    function backImage() {
+        this.src = "banana.png";
+    }
+</script>
+
+<body>
+    <h1>Hover over the image to change it</h1>
+    <img src="banana.png" alt="Banana" 
+    onmouseover="changeImage.call(this)" 
+    onmouseout="backImage.call(this)">
+
+
+</body>
+</html>
