@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pw = prompt("암호를 입력하세요.");
+        document.write("<h1> 월화수목금토일 </h1> <hr>");
+        if (day == "월" || day == "화" || day == "수" || day == "목") {
+            document.write("<p>" + day + "는 출근</p>");
+        } else if (day == "금" || day == "토" || day == "일") {
+            document.write("<p>" + day + "는 휴일</p>");
+        } else {
+            document.write("<p>wrong input</p>");
+        }
+    </script>
+</body>
+</html>

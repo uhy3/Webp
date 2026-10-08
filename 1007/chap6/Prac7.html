@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt("숫자입력");
+        document.write("<h1>큰 자리수와 낮은자리수 같은지 비교</h1> <hr>");
+        
+        let firstDigit = num;
+        while (firstDigit >= 10) {
+            firstDigit = Math.floor(firstDigit / 10);
+        }
+        let lastDigit = num % 10;
+
+        if (firstDigit === lastDigit) {
+            document.write("<p>" + num + " 같음</p>");
+        } else {
+            document.write("<p>" + num + " 다름</p>");
+        }
+    </script>
+</body>
+</html>

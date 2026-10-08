@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>별 문자 출력</title>
+</head>
+<body>
+    <h1>별 문자 출력</h1>
+    <hr>
+    
+    <script>
+        function printstar() {
+            let star = prompt("별의 개수를 입력하세요.", 0);
+            try {
+                star = parseInt(star);
+            } catch (e) {
+                document.write("입력 오류입니다.");
+            }
+
+            let count = 0;
+
+            for (let i = 0; i < star; i++) {
+                for (let j = 0; j <= i; j++) {
+                    document.write("*");
+                    count++;
+                }
+                document.write("<br>");
+            }
+        }
+        printstar();
+    </script>
+</body>
+</html>
