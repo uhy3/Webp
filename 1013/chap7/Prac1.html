@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>난수</title>
+</head>
+
+<script>
+    function Rand() {
+        return Math.floor(Math.random()*100) +1;
+    }
+</script>
+
+<body>
+    <h1>난수 10개 생성</h1>
+    <hr>
+    <script>
+        let n = [];
+        for (let i = 0; i < 10; i++) {
+            n[i] = Rand();
+            document.write(n[i] + " ");
+        }
+        document.write("<hr>");
+        let max_n = n[0];
+        for (let i = 0; i < n.length; i++) {
+            if (n[i] > max_n) max_n = n[i];
+        }
+        document.write("제일 큰 수는 " + max_n + "<hr>");
+        n.sort(function(a, b) {
+            return a - b;
+        });
+        for (let i = 0; i < n.length; i++) {
+            document.write(n[i] + " ");
+        }
+    </script>
+</body>
+</html>
