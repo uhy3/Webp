@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>클릭하면 90도 회전합니다</h3>
+    <hr>
+    <img src="img/spongebob.webp" onclick="rotateImage(this)">
+
+    <script>
+        function rotateImage(obj) {
+            let angle = obj.angle || 0;
+            angle += 90;
+            obj.angle = angle;
+            obj.style.transform = "rotate(" + angle + "deg)";
+        }
+    </script>
+</body>
+</html>

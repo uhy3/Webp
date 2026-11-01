@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>클릭하면 가로로 2배, 3배, 4배 옆으로 늘어납니다</h3>
+    <hr>
+    <img src="img/spongebob.webp" onclick="scaleImage(this)">
+
+    <script>
+        function scaleImage(obj) {
+            let scale = obj.scale || 1;
+            scale += 1;
+            obj.scale = scale;
+            obj.style.transform = "scale(" + scale + ", 1)";
+        }
+    </script>
+</body>
+</html>

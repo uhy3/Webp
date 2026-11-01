@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index 스타일 프로퍼티</title>
+</head>
+<style>
+    div {
+        position: absolute;
+    }
+    img {
+        position: absolute;
+    }
+</style>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div>
+        <img src="img/spadeA.webp" width="100" height="140" alt="스페이드A">
+        <img src="img/spade2.jpg" width="100" height="140" alt="스페이드2">
+        <img src="img/spade3.jpg" width="100" height="140" alt="스페이드3">
+        <img src="img/spade7.jpg" width="100" height="140" alt="스페이드7">
+    </div>
+    <script>
+        const images = Array.from(document.getElementsByTagName("img"));
+        const stack = images.slice();
+
+        function updateZIndexes() {
+            stack.forEach((image, index) => {
+                image.style.zIndex = index;
+            });
+        }
+
+        updateZIndexes();
+
+        images.forEach(image => {
+            image.addEventListener("click", () => {
+                stack.splice(stack.indexOf(image), 1);
+                stack.unshift(image);
+                updateZIndexes();
+            });
+        });
+    </script>
+</body>
+</html>
