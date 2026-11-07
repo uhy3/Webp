@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table { border-collapse: collapse; }
+    td { border: 1px solid #999; width: 70px; height: 70px; text-align: center; }
+</style>
+<script>
+    function initGame() {
+        const tbody = document.querySelector("tbody");
+        for (let r = 0; r < 10; r++) {
+            const tr = document.createElement("tr");
+            for (let c = 0; c < 10; c++) {
+                const td = document.createElement("td");
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+
+        const cells = document.querySelectorAll("td");
+        const randomCell = cells[Math.floor(Math.random() * cells.length)];
+        
+        const img = document.createElement("img");
+        img.src = "O.png";
+        img.addEventListener("click", moveImage);
+        
+        randomCell.appendChild(img);
+    }
+
+    function moveImage(event) {
+        const currentImg = event.currentTarget;
+        
+        const emptyCells = [...document.querySelectorAll("td")].filter(td => td.children.length === 0);
+        
+        if (emptyCells.length > 0) {
+            const targetCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            targetCell.appendChild(currentImg);
+        }
+    }
+</script>
+<body onload="initGame()">
+    <table>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

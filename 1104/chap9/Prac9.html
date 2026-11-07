@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tip {
+        position: absolute;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 5px;
+        visibility: hidden;
+    }
+</style>
+<body>
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+    <hr>
+    <ul>
+        <li onmouseover="show(event, '1번 설명입니다')" onmouseout="hide()">아이템 1</li>
+        <li onmouseover="show(event, '2번 설명입니다')" onmouseout="hide()">아이템 2</li>
+        <li onmouseover="show(event, '3번 설명입니다')" onmouseout="hide()">아이템 3</li>
+        <li onmouseover="show(event, '4번 설명입니다')" onmouseout="hide()">아이템 4</li>
+    </ul>
+
+    <div id="tip"></div>
+
+    <script>
+        const box = document.getElementById('tip');
+
+        function show(e, text) {
+            box.innerHTML = text;
+            box.style.left = e.pageX + 10 + 'px';
+            box.style.top = e.pageY + 10 + 'px';
+            box.style.visibility = 'visible';
+        }
+
+        function hide() {
+            box.style.visibility = 'hidden';
+        }
+    </script>
+</body>
+</html>

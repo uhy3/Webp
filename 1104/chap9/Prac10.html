@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+    #display {
+        width: 170px;
+        height: 30px;
+        text-align: right;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 18px;
+    }
+    button {
+        width: 40px;
+        height: 40px;
+        margin: 1px;
+        text-align: center;
+    }
+</style>
+<script>
+    let curInput = "";
+    let preInput = null;
+    let oper = null;
+
+    function updateDisplay() {
+        document.getElementById("display").value = curInput;
+    }
+
+    function back() {
+        if (curInput.length > 1) {
+            curInput = curInput.slice(0, -1);
+        } else {
+            curInput = "0";
+        }
+        updateDisplay();
+    }
+
+    function ce() {
+        curInput = "0";
+        preInput = null;
+        oper = null;
+        updateDisplay();
+    }
+
+    function C() {
+        curInput = "0";
+        preInput = null;
+        oper = null;
+        updateDisplay();
+    }
+
+    function num(value) {
+        if (curInput === "0" || curInput === "DIVIDE BY ZERO") {
+            curInput = String(value);
+        } else {
+            curInput += String(value);
+        }
+        updateDisplay();
+    }
+
+    function operator(value) {
+        if (preInput !== null && oper !== null) {
+            equal();
+        }
+        oper = value;
+        preInput = curInput;
+        curInput = "0";
+    }
+
+    function equal() {
+        if (preInput === null && oper === null) return;
+
+        const prev = parseFloat(preInput);
+        const cur = parseFloat(curInput);
+        let result = 0;
+
+        switch (oper) {
+            case '+':
+                result = prev + cur;
+                break;
+            case '-':
+                result = prev - cur;
+                break;
+            case '*':
+                result = prev * cur;
+                break;
+            case '/':
+                if (cur !== 0) {
+                    result = prev / cur;
+                } else {
+                    result = "DIVIDE BY ZERO"
+                    preInput = null;
+                    oper = null;
+                    updateDisplay();
+                    return;
+                }
+                break;
+        }
+        curInput = String(result);
+        preInput = null;
+        oper = null;
+        updateDisplay();
+    }
+    
+</script>
+<body>
+    <input type="text" id="display" value="0" readonly><br>
+    <button onclick="back()">back</button> <button onclick="ce()">ce</button> <button onclick="C()">C</button> <button onclick="equal()">=</button><br>
+    <button onclick="num(7)">7</button> <button onclick="num(8)">8</button> <button onclick="num(9)">9</button> <button onclick="operator('/')">/</button><br>
+    <button onclick="num(4)">4</button> <button onclick="num(5)">5</button> <button onclick="num(6)">6</button> <button onclick="operator('*')">*</button><br>
+    <button onclick="num(1)">1</button> <button onclick="num(2)">2</button> <button onclick="num(3)">3</button> <button onclick="operator('-')">-</button><br>
+    <button onclick="num(0)">0</button> <button onclick="operator('+')">+</button> <button>null</button> <button>null</button>
+</body>
+</html>

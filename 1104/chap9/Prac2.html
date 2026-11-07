@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function showValueAndImage() {
+        let found = null;
+        let btn = document.getElementsByName("btn");
+        
+        for (let i = 0; i < btn.length; i++) {
+            if (btn[i].checked) {
+                found = btn[i].value;
+                break;
+            }
+        }
+        
+        if (found) {
+            let ext = "jpg";
+            if (found === "banana") ext = "webp";
+            else if (found === "mango") ext = "jfif";
+            
+            let outputBox = document.querySelector(".output");
+            outputBox.innerHTML = `
+                <img src="img/${found}.${ext}" alt="${found}" style="max-width: 300px; height: auto;">
+            `;
+        }
+    }
+</script>
+<body>
+    <form>
+        <input type="radio" name="btn" value="apple" onchange="showValueAndImage()"> Apple
+        <input type="radio" name="btn" value="banana" onchange="showValueAndImage()"> Banana
+        <input type="radio" name="btn" value="mango" onchange="showValueAndImage()"> Mango
+    </form>
+
+    <div class="output"></div>
+</body>
+</html>

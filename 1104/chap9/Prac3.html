@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calc(e) {
+        let inputtext = document.getElementById("calcInput").value;
+        let result = eval(inputtext);
+        if (e.key === "Enter") {
+            document.getElementById("resultInput").value = result;
+        }
+    }
+</script>
+<body>
+    식 <input type="text" id="calcInput" onkeydown="calc(event)">
+    <br>
+    값 <input type="text" id="resultInput" readonly>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체의 target</title>
+</head>
+<script>
+    window.onmouseover = function(e) {
+        if (e.target.tagName === "SPAN") {
+            e.target.style.textDecoration = "underline";
+        }
+    }
+    window.onmouseout = function(e) {
+        if (e.target.tagName === "SPAN") {
+            e.target.style.textDecoration = " none";
+        }
+    }
+</script>
+<body>
+    <h3>span 태그에만 onmouseover와 onmouseout 이벤트</h3>
+    <hr>
+    <p>이 문단에는 이벤트가 없으며 <span>이 태그에만</span> 이벤트가 있음.</p>
+</body>
+</html>

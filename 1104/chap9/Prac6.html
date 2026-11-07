@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onwheel="imagewheel(event)">
+    <h3>휠로 확대/축소</h3>
+    <img id="image" src="img/car.png">
+    <script>
+        function imagewheel(event) {
+            const img = document.getElementById("image");
+            let currentWidth = img.width;
+            let currentHeight = img.height;
+
+            if (event.deltaY < 0) {
+                img.width = currentWidth * 1.05;
+                img.height = currentHeight * 1.05;
+            } else {
+                img.width = currentWidth * 0.95;
+                img.height = currentHeight * 0.95;
+            }
+        }
+    </script>
+</body>
+</html>

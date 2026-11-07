@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin:0;
+        height:100vh;
+        background-color: white;
+    }
+</style>
+<body ondblclick="changebackgroundcolor()">
+    <h3> 더블클릭시 바탕화면 색 변경 </h3>
+    <script>
+        function changebackgroundcolor() {
+            document.body.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+        }
+    </script>
+</body>
+</html>

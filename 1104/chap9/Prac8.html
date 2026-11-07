@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>아이템을 클릭하면 1.3배 크기</h3>
+    <hr>
+    <ul>
+        <li>아이템 1</li>
+        <li>아이템 2</li>
+        <li>아이템 3</li>
+        <li>아이템 4</li>
+    </ul>
+<script>
+    const items = document.getElementsByTagName("li");
+    for (let i = 0; i < items.length; i++) {
+        items[i].onclick = function() {    
+        for (let j = 0; j < items.length; j++) {
+            items[j].style.fontSize = "1em";
+        }
+        this.style.fontSize = "1.3em";
+        };
+    }
+</script>
+</body>
+</html>
