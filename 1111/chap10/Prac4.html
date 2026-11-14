@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function printproduct() {
+        let chrome = navigator.userAgent;
+        let google = navigator.vendor;
+
+        if (chrome.toLowerCase().includes("chrome") && google.toLowerCase().includes("google")) {
+            document.write("yes");
+            alert("구글 크롬");
+        }
+    }
+</script>
+<body onload="printproduct()">
+    hello
+</body>
+</html>

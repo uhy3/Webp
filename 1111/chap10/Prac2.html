@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function load(URL) {
+        let win = window.open("", "", "left=500, top=400, width=200, height=80");
+        win.document.write("접속감사합니다");
+        win.document.title= "환영";
+        win.document.body.style.backgroundColor = "yellowGreen";
+    }
+</script>
+<body onload="load()">
+    <h3>HTML5</h3>
+    <hr>
+    <p>
+        HTML5를 학습하는 사이트.
+        HTML5, CSS3, 자바스크립트
+    </p>
+</body>
+</html>

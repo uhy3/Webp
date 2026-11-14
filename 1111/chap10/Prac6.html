@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let timer = null;
+    let isRunning = false;
+
+    function updateClock() {
+        let now = new Date();
+        document.getElementById("clock").innerText = now.toLocaleTimeString();
+    }
+
+    function toggleClock() {
+        if (isRunning) {
+            clearInterval(timer);
+            timer = null;
+            isRunning = false;
+        } else {
+            updateClock();
+            timer = setInterval(updateClock, 1000);
+            isRunning = true;
+        }
+    }
+
+    window.onload = function() {
+        toggleClock();
+    };
+</script>
+<body>
+    <div id="clock" onclick="toggleClock()"></div>    
+</body>
+</html>

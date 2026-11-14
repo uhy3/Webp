@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>screen 해상도 체크</h3>
+    <hr>
+    스크린의 해상도가 1280x1024보다 작으면 경고, 아니면 works
+    <script>
+        if (screen.width < 1280 || screen.height < 1024) {
+            alert("해상도가 낮습니다.")
+        } else {
+            alert("works");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .question-row.incorrect .expression-text {
+            text-decoration: line-through;
+        }
+        .question-row {
+            display: grid;
+            grid-template-columns: 120px auto;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>수식 퀴즈</h1>
+        <p>아래 수식의 답을 입력하세요.</p>
+        <form id="quiz-form">
+            <div id="questions"></div>
+            <div class="buttons">
+                <button type="submit">채점</button>
+                <span id="score" aria-live="polite"></span>
+                <button type="button" class="secondary" id="again">다시</button>
+            </div>
+        </form>
+    </main>
+    <script>
+        const questions = document.getElementById('questions');
+        const score = document.getElementById('score');
+        const form = document.getElementById('quiz-form');
+        const questionCount = 4;
+        let correctAnswers = [];
+
+        function makeQuestion() {
+            const operators = ['+', '−', '×', '÷'];
+            correctAnswers = [];
+            questions.innerHTML = '';
+            score.textContent = '0';
+
+            for (let i = 0; i < questionCount; i++) {
+                const operator = operators[Math.floor(Math.random() * operators.length)];
+                let a = Math.floor(Math.random() * 20) + 1;
+                let b = Math.floor(Math.random() * 20) + 1;
+
+                if (operator === '−' && a < b) [a, b] = [b, a];
+                let correctAnswer;
+                if (operator === '÷') {
+                    b = Math.floor(Math.random() * 10) + 1;
+                    correctAnswer = Math.floor(Math.random() * 10) + 1;
+                    a = b * correctAnswer;
+                } else if (operator === '+') {
+                    correctAnswer = a + b;
+                } else if (operator === '−') {
+                    correctAnswer = a - b;
+                } else {
+                    correctAnswer = a * b;
+                }
+
+                correctAnswers.push(correctAnswer);
+                const row = document.createElement('div');
+                row.className = 'question-row';
+                row.innerHTML = `<span class="expression-text">${a} ${operator} ${b} </span>
+                    <input type="number"  aria-label="${i + 1}번 문제 답">`;
+                questions.appendChild(row);
+            }
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const rows = questions.querySelectorAll('.question-row');
+            let correctCount = 0;
+            rows.forEach((row, index) => {
+                const isCorrect = Number(row.querySelector('input').value) === correctAnswers[index];
+                row.classList.toggle('incorrect', !isCorrect);
+                if (isCorrect) correctCount++;
+            });
+            score.textContent = correctCount;
+        });
+
+        document.getElementById('again').addEventListener('click', makeQuestion);
+        makeQuestion();
+    </script>
+</body>
+</html>

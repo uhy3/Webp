@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let win = null;
+    function site(sel) {
+        let url = sel.value;
+        if (!url) return;
+        if (win === null || win.closed) {
+            win = window.open(url, "", "width=800, height=600, left=400, top=300");
+        } else {
+            win.open(url, "", "width=800, height=600, left=400, top=300");
+            win.focus();
+        }
+    }
+</script>
+<body>
+    <h3>옵션 선택으로 사이트 접속</h3>
+    <hr>
+    <div>
+        접속할 사이트
+        <select onchange="site(this)">
+            <option value="https://naver.com">naver</option>
+            <option value="https://google.com">google</option>
+            <option value="https://youtube.com">youtube</option>
+        </select>
+    </div>
+</body>
+</html>
